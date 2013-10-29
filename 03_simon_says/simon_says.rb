@@ -20,12 +20,12 @@ def start_of_word(str, i)
 end
 
 def first_word(str)
-  words = str.split(" ")
+  words = str.split
   words[0]
 end
 
 def titleize(str)
-  words = str.split(" ")
+  words = str.split
   words[0].capitalize!
   little_words = ["and", "the", "over"]
   new_str = words.map do |x| 

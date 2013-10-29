@@ -20,7 +20,7 @@
 # end
 
 def translate(str)
-  words = str.split(" ")
+  words = str.split
   words.map do |x|
     if x[/[aeiou]/] == x[0]
       x << "ay"

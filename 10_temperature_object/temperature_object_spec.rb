@@ -130,7 +130,13 @@ describe Temperature do
   # 2. Refactor the rest of your code so it calls these two methods when appropriate
 
   describe "utility class methods" do
+    it "Fahrenheit has the class method ftoc" do
+      Fahrenheit.ftoc(50).should == 10
+    end
 
+    it "Celsius has the class method ctof" do
+      Celsius.ctof(50).should == 122
+    end
   end
 
 end
