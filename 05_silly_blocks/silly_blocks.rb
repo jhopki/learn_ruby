@@ -5,7 +5,11 @@ def reverser(str="hello")
   rev_words.join(" ")
 end
 
-def adder(i=3)
+def adder(i=1)
   num = yield
   num += i 
+end
+
+def repeater(i = 1)
+  i.times { yield }
 end
