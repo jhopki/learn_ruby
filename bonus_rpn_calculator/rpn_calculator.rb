@@ -55,4 +55,38 @@ class RPNCalculator
   def value
     @total
   end  
+
+  def tokens(string)
+    operators = ["*","+","-","/"]
+    items = string.split
+    items.map do |x| 
+      if operators.include?(x)
+        x.to_sym  
+      else
+        x.to_i
+      end
+    end
+  end
+
+  def evaluate(string)
+    what = tokens(string)
+    numbers = []
+    ops = []
+    what.each do |x|
+      if x.is_a?(Integer)
+         push(x)
+      else
+        ops << x
+      end
+    end
+    result = 0
+    ops.each do |operator|
+      result = plus if operator == :+ 
+      result = minus if operator == :-
+      result = times if operator == :*
+      result = divide if operator == :/
+    end
+    result
+
+  end
 end
